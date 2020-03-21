@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       NSDictionary *dataSource = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"theme" ofType:@"plist"]];
       DPThemeModel *model = [DPThemeModel mj_objectWithKeyValues: [dataSource objectForKey:@"one"]];
-   [[DPThemeManager manager]setupTheme:model];
+   [[DPThemeManager manager]pushCurrentThemme:model];
     return YES;
 }
 

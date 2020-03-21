@@ -25,9 +25,9 @@
     [self.view addSubview:self.two];
     [self.view addSubview:self.image];
     __weak typeof (self)weakSelf = self;
-    [self tz_dynamicTheme:^(DPThemeConfig * _Nullable config) {
-        [weakSelf.image sd_setImageWithURL:[NSURL URLWithString:config.img1]];
-    } WithIdentifier:NSStringFromClass([self class])];
+//    [self tz_dynamicTheme:^(DPThemeConfig * _Nullable config) {
+//        [weakSelf.image sd_setImageWithURL:[NSURL URLWithString:config.img1]];
+//    } WithIdentifier:NSStringFromClass([self class])];
 }
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -71,12 +71,12 @@
     switch (sender.tag) {
         case 100:{
             DPThemeModel *model = [DPThemeModel mj_objectWithKeyValues: [dataSource objectForKey:@"one"]];
-            [[DPThemeManager manager] changeThemme:model];
+            [[DPThemeManager manager] pushCurrentThemme:model];
         }
             break;
         case 200:{
             DPThemeModel *model = [DPThemeModel mj_objectWithKeyValues: [dataSource objectForKey:@"two"]];
-            [[DPThemeManager manager] changeThemme:model];
+            [[DPThemeManager manager] pushCurrentThemme:model];
         }
                 
             break;

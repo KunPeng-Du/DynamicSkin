@@ -11,7 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DPThemeModel : NSObject
+/**
+ 默认模式
+ */
 @property(nonatomic,strong)DPThemeConfig *light;
+/**
+暗夜模式（Dark Mode）
+*/
 @property(nonatomic,strong)DPThemeConfig *dark;
 @end
 

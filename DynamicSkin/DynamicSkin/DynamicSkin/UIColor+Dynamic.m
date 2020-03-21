@@ -2,14 +2,14 @@
 //  UIColor+Dynamic.m
 //  ThemeDemo
 //
-//  Created by 潭州教育 on 2020/3/12.
-//  Copyright © 2020 时光博客. All rights reserved.
+//  Created by DP on 2020/3/14.
+//  Copyright © 2020 DKP. All rights reserved.
 //
 
 #import "UIColor+Dynamic.h"
 #import "DPThemeManager.h"
 @implementation UIColor (Dynamic)
-+(UIColor*)tz_dynamicColorCompete:(DynamicColorComplete)complete Update:(DynamicThemeUpdate)update WithIdentifier:(NSString*)identifer{
++(UIColor*)dp_dynamicColorCompete:(DynamicColorComplete)complete Update:(DynamicThemeUpdate)update WithIdentifier:(NSString*)identifer{
     return  complete([[DPThemeManager manager] currentThemeConfig:(DynamicThemeUpdate)update WithIdentifier:(NSString*)identifer]);
 }
 + (UIColor *)dp_colorWithHexString:(NSString *)hexString {

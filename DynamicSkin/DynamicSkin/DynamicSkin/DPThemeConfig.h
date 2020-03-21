@@ -18,14 +18,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DPThemeConfig : NSObject
-@property(nonatomic,copy)NSString*color1;
-@property(nonatomic,copy)NSString*color2;
-@property(nonatomic,copy)NSString*img1;
-@property(nonatomic,copy)NSString*tabOne;
-@property(nonatomic,copy)NSString*tabTwo;
-@property(nonatomic,copy)NSString*tabThree;
-@property(nonatomic,copy)NSString*tabTextColorNormal;
-@property(nonatomic,copy)NSString*tabTextColorSelect;
+/**
+ 根据自己需求配置该模型（更新时会拿到这里所有的信息）
+ 如：导航栏背景色
+@property(nonatomic,copy)NSString *navBarColor;
+ .
+ .
+ .
+ .
+ */
+
 @end
 
 NS_ASSUME_NONNULL_END

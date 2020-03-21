@@ -13,7 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIWindow (Dynamic)
-//@property(nonatomic,assign)UIUserInterfaceStyle currentStyle;
+
 @end
 
 NS_ASSUME_NONNULL_END

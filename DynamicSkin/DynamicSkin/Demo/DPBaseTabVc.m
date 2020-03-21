@@ -36,16 +36,16 @@
     vc.title =title ;
     [self tz_dynamicTheme:^(DPThemeConfig * _Nullable config) {
         if ([title isEqualToString:@"one"]) {
-            nv.tabBarItem.image = [UIImage imageNamed:config.tabOne];
+//            nv.tabBarItem.image = [UIImage imageNamed:config.tabOne];
            // nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
         }else if ([title isEqualToString:@"two"]){
-            nv.tabBarItem.image = [UIImage imageNamed:config.tabTwo];
+//            nv.tabBarItem.image = [UIImage imageNamed:config.tabTwo];
            // nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
         }else if ([title isEqualToString:@"three"]){
-            nv.tabBarItem.image = [UIImage imageNamed:config.tabTwo];
+//            nv.tabBarItem.image = [UIImage imageNamed:config.tabTwo];
             //nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
         }
-        self.tabBar.tintColor = [UIColor dp_colorWithHexString:config.tabTextColorNormal];
+//        self.tabBar.tintColor = [UIColor dp_colorWithHexString:config.tabTextColorNormal];
     
     } WithIdentifier:NSStringFromClass([self class])];
     

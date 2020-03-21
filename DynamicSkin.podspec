@@ -8,6 +8,5 @@ Pod::Spec.new do |s|
     s.platform     = :ios, '8.0'
     s.source       = {:git => 'https://github.com/KunPeng-Du/DynamicSkin.git', :tag => s.version}
     s.source_files = 'DynamicSkin/DynamicSkin/DynamicSkin/**/*.{h,m}'
-    s.resource     = 'DynamicSkin/DynamicSkin/DynamicSkin.bundle'
     s.requires_arc = true
 end

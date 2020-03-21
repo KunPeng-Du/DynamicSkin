@@ -9,7 +9,7 @@
 #import "DPThemeManager.h"
 
 @interface DPThemeManager()
-@property(nonatomic,strong)DPThemeModel *currentModel;
+@property(nonatomic,strong)DPThemeModel *currentTheme;
 @property(nonatomic,strong)NSMutableArray *updateBlocks;
 @property(nonatomic,copy)NSString*theme;
 @property (strong, nonatomic) dispatch_semaphore_t blockLock;
@@ -32,12 +32,12 @@
 -(DPThemeConfig *)currentThemeConfig{
     if (@available(iOS 13.0, *)) {
         if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-            return self.currentModel.dark;
+            return self.currentTheme.dark;
         }else{
-            return self.currentModel.light;
+            return self.currentTheme.light;
         }
     }
-    return self.currentModel.light;
+    return self.currentTheme.light;
 }
 -(DPThemeConfig*)currentThemeConfig:(DynamicThemeUpdate)block WithIdentifier:(NSString*)identifer{
     if (identifer && [identifer isKindOfClass:[NSString class]] && identifer.length>0 ) {
@@ -45,9 +45,6 @@
         [self.updateBlocks addObject:@{identifer:block}];
         TZ_UNLOCK(self.blockLock);
     }
-#ifdef DEBUG
-    NSLog(@"当前存储的block>>>>>>%lu",(unsigned long)self.updateBlocks.count);
-#endif
     return [self currentThemeConfig];
 }
 -(BOOL)isHaveCurrentItem:(NSString*)itemKey{
@@ -62,7 +59,7 @@
     return isHave;
 }
 -(void)setupTheme:(DPThemeModel*)theme{
-    self.currentModel = theme;
+    self.currentTheme = theme;
 }
 
 -(NSMutableArray *)updateBlocks{
@@ -71,7 +68,7 @@
     }
     return _updateBlocks;
 }
--(void)changeThemme{
+-(void)pushCurrentThemme{
     DPThemeConfig *cfg = [self currentThemeConfig];
     for (NSDictionary *dict in self.updateBlocks) {
         NSMutableArray *values = (NSMutableArray*)dict.allValues;
@@ -82,10 +79,10 @@
         }
     }
 }
--(void)changeThemme:(DPThemeModel *)theme{
+-(void)pushCurrentThemme:(DPThemeModel *)theme{
     //切换主题
     [self setupTheme:theme];
-    [self changeThemme];
+    [self pushCurrentThemme];
 }
 -(void)removeUpdateWithIdentifer:(NSString*)identifer{
     if (identifer && identifer.length>0) {
@@ -99,8 +96,5 @@
         self.updateBlocks = arrM;
         TZ_UNLOCK(self.blockLock);
     }
-#ifdef DEBUG
-    NSLog(@"当前存储的block>>>>>>%lu",(unsigned long)self.updateBlocks.count);
-#endif
 }
 @end

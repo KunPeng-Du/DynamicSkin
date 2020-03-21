@@ -32,10 +32,9 @@ static const char TZCurrentUserStyleKey = '\0';
         if (self.currentStyle ==self.TZ_traitCollection.userInterfaceStyle) {
             return [self TZ_traitCollection];
         }else{
-            NSLog(@">>>>%ld>>>>>%ld>>>>%@",(long)self.currentStyle,self.TZ_traitCollection.userInterfaceStyle,NSStringFromClass([self class]));
             self.currentStyle =self.TZ_traitCollection.userInterfaceStyle;
             //用户切换了模式
-            [[DPThemeManager manager]changeThemme];
+            [[DPThemeManager manager]pushCurrentThemme];
         }
     }else{
         return [self TZ_traitCollection];
