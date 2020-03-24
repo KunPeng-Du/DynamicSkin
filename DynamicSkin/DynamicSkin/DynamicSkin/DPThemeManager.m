@@ -12,7 +12,6 @@
 @property(nonatomic,strong)DPThemeConfig *darkConfig;
 @property(nonatomic,strong)DPThemeConfig *currentConfig;
 @property(nonatomic,strong)NSMutableArray *updateBlocks;
-//@property(nonatomic,copy)NSString*theme;
 @property (strong, nonatomic) dispatch_semaphore_t blockLock;
 @end
 @implementation DPThemeManager

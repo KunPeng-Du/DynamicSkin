@@ -9,17 +9,11 @@
 
 #import <Foundation/Foundation.h>
 NS_ASSUME_NONNULL_BEGIN
-
-@interface DPThemeConfig : NSObject
 /**
- 根据自己需求配置该模型（更新时会拿到这里所有的信息）
- 如：导航栏背景色
-@property(nonatomic,copy)NSString *navBarColor;
- .
- .
- .
- .
- */
+配置基类，根据自己需求继承该类，添加自定义属性。
+*/
+@interface DPThemeConfig : NSObject
+
 
 @end
 

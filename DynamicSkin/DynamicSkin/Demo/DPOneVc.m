@@ -97,4 +97,7 @@
             break;
     }
 }
+-(void)dealloc{
+    [[DPThemeManager manager] removeUpdateWithIdentifer:NSStringFromClass([self class])];
+}
 @end
