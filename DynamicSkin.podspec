@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'DynamicSkin'
-    s.version      = '1.0.0'
+    s.version      = '1.0.1'
     s.summary      = 'An easy way to change skin or theme of your app'
     s.homepage     = 'https://github.com/KunPeng-Du/DynamicSkin'
     s.license      = 'MIT'

@@ -9,9 +9,10 @@
 #import "DPThemeManager.h"
 
 @interface DPThemeManager()
-@property(nonatomic,strong)DPThemeModel *currentTheme;
+@property(nonatomic,strong)DPThemeConfig *darkConfig;
+@property(nonatomic,strong)DPThemeConfig *currentConfig;
 @property(nonatomic,strong)NSMutableArray *updateBlocks;
-@property(nonatomic,copy)NSString*theme;
+//@property(nonatomic,copy)NSString*theme;
 @property (strong, nonatomic) dispatch_semaphore_t blockLock;
 @end
 @implementation DPThemeManager
@@ -32,12 +33,12 @@
 -(DPThemeConfig *)currentThemeConfig{
     if (@available(iOS 13.0, *)) {
         if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-            return self.currentTheme.dark;
+            return self.darkConfig?self.darkConfig:self.currentConfig;
         }else{
-            return self.currentTheme.light;
+            return self.currentConfig;
         }
     }
-    return self.currentTheme.light;
+    return self.currentConfig;
 }
 -(DPThemeConfig*)currentThemeConfig:(DynamicThemeUpdate)block WithIdentifier:(NSString*)identifer{
     if (identifer && [identifer isKindOfClass:[NSString class]] && identifer.length>0 ) {
@@ -58,17 +59,7 @@
     }
     return isHave;
 }
--(void)setupTheme:(DPThemeModel*)theme{
-    self.currentTheme = theme;
-}
-
--(NSMutableArray *)updateBlocks{
-    if(!_updateBlocks){
-        _updateBlocks = [NSMutableArray array];
-    }
-    return _updateBlocks;
-}
--(void)pushCurrentThemme{
+-(void)updateTheme{
     DPThemeConfig *cfg = [self currentThemeConfig];
     for (NSDictionary *dict in self.updateBlocks) {
         NSMutableArray *values = (NSMutableArray*)dict.allValues;
@@ -79,10 +70,13 @@
         }
     }
 }
--(void)pushCurrentThemme:(DPThemeModel *)theme{
+-(void)pushCurrentThemme:(DPThemeConfig*)currentConfig{
     //切换主题
-    [self setupTheme:theme];
-    [self pushCurrentThemme];
+    self.currentConfig = currentConfig;
+    [self updateTheme];
+}
+-(void)pushDarkModeTheme:(DPThemeConfig *)darkConfig{
+    self.darkConfig = darkConfig;
 }
 -(void)removeUpdateWithIdentifer:(NSString*)identifer{
     if (identifer && identifer.length>0) {
@@ -96,5 +90,19 @@
         self.updateBlocks = arrM;
         TZ_UNLOCK(self.blockLock);
     }
+}
+#pragma -mark Getter
+
+- (DPThemeConfig *)currentConfig{
+    if (!_currentConfig) {
+        _currentConfig = [[DPThemeConfig alloc]init];
+    }
+    return _currentConfig;
+}
+-(NSMutableArray *)updateBlocks{
+    if(!_updateBlocks){
+        _updateBlocks = [NSMutableArray array];
+    }
+    return _updateBlocks;
 }
 @end

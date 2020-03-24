@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E0011582429094B006B2CE9 /* theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0011572429094B006B2CE9 /* theme.plist */; };
+		7E00115B24290A70006B2CE9 /* TestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E00115924290A70006B2CE9 /* TestConfig.m */; };
 		7E339F03241E117D002075D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F02241E117D002075D9 /* AppDelegate.m */; };
 		7E339F06241E117E002075D9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F05241E117E002075D9 /* SceneDelegate.m */; };
 		7E339F09241E117E002075D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F08241E117E002075D9 /* ViewController.m */; };
@@ -15,7 +17,6 @@
 		7E339F14241E1187002075D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F13241E1187002075D9 /* main.m */; };
 		7E339F1E241E1188002075D9 /* DynamicSkinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F1D241E1188002075D9 /* DynamicSkinTests.m */; };
 		7E339F29241E1188002075D9 /* DynamicSkinUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F28241E1188002075D9 /* DynamicSkinUITests.m */; };
-		7E339F38241E189F002075D9 /* theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E339F37241E189F002075D9 /* theme.plist */; };
 		7E339F67241E1968002075D9 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F54241E1968002075D9 /* MJPropertyType.m */; };
 		7E339F68241E1968002075D9 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F57241E1968002075D9 /* NSObject+MJKeyValue.m */; };
 		7E339F69241E1968002075D9 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F58241E1968002075D9 /* MJProperty.m */; };
@@ -33,7 +34,6 @@
 		7E339F83241E1D67002075D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E339F82241E1D67002075D9 /* Main.storyboard */; };
 		7E339F90241E1F8F002075D9 /* DPThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F84241E1F8F002075D9 /* DPThemeManager.m */; };
 		7E339F91241E1F8F002075D9 /* NSObject+Dynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F85241E1F8F002075D9 /* NSObject+Dynamic.m */; };
-		7E339F92241E1F8F002075D9 /* DPThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F89241E1F8F002075D9 /* DPThemeModel.m */; };
 		7E339F93241E1F8F002075D9 /* DPThemeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F8A241E1F8F002075D9 /* DPThemeConfig.m */; };
 		7E339F94241E1F8F002075D9 /* UIWindow+Dynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F8F241E1F8F002075D9 /* UIWindow+Dynamic.m */; };
 		7E339F97241E28E5002075D9 /* UIColor+Dynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E339F95241E28E5002075D9 /* UIColor+Dynamic.m */; };
@@ -125,6 +125,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E0011572429094B006B2CE9 /* theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = theme.plist; sourceTree = "<group>"; };
+		7E00115924290A70006B2CE9 /* TestConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestConfig.m; sourceTree = "<group>"; };
+		7E00115A24290A70006B2CE9 /* TestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestConfig.h; sourceTree = "<group>"; };
 		7E339EFE241E117D002075D9 /* DynamicSkin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicSkin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E339F01241E117D002075D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7E339F02241E117D002075D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -142,7 +145,6 @@
 		7E339F24241E1188002075D9 /* DynamicSkinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicSkinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E339F28241E1188002075D9 /* DynamicSkinUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicSkinUITests.m; sourceTree = "<group>"; };
 		7E339F2A241E1188002075D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E339F37241E189F002075D9 /* theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = theme.plist; sourceTree = "<group>"; };
 		7E339F51241E1968002075D9 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		7E339F52241E1968002075D9 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
 		7E339F53241E1968002075D9 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
@@ -179,9 +181,7 @@
 		7E339F86241E1F8F002075D9 /* UIWindow+Dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Dynamic.h"; sourceTree = "<group>"; };
 		7E339F87241E1F8F002075D9 /* DPThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPThemeManager.h; sourceTree = "<group>"; };
 		7E339F88241E1F8F002075D9 /* DPDynamicTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDynamicTheme.h; sourceTree = "<group>"; };
-		7E339F89241E1F8F002075D9 /* DPThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPThemeModel.m; sourceTree = "<group>"; };
 		7E339F8A241E1F8F002075D9 /* DPThemeConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPThemeConfig.m; sourceTree = "<group>"; };
-		7E339F8B241E1F8F002075D9 /* DPThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPThemeModel.h; sourceTree = "<group>"; };
 		7E339F8C241E1F8F002075D9 /* DPThemeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPThemeConst.h; sourceTree = "<group>"; };
 		7E339F8D241E1F8F002075D9 /* DPThemeConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPThemeConfig.h; sourceTree = "<group>"; };
 		7E339F8E241E1F8F002075D9 /* NSObject+Dynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Dynamic.h"; sourceTree = "<group>"; };
@@ -378,8 +378,8 @@
 		7E339F00241E117D002075D9 /* DynamicSkin */ = {
 			isa = PBXGroup;
 			children = (
+				7E0011572429094B006B2CE9 /* theme.plist */,
 				7E33A06C241E399C002075D9 /* SDWebImage */,
-				7E339F37241E189F002075D9 /* theme.plist */,
 				7E339F72241E19E4002075D9 /* Demo */,
 				7E339F50241E1968002075D9 /* MJExtension */,
 				7E339F36241E1869002075D9 /* DynamicSkin */,
@@ -427,8 +427,6 @@
 				7E339F8C241E1F8F002075D9 /* DPThemeConst.h */,
 				7E339F87241E1F8F002075D9 /* DPThemeManager.h */,
 				7E339F84241E1F8F002075D9 /* DPThemeManager.m */,
-				7E339F8B241E1F8F002075D9 /* DPThemeModel.h */,
-				7E339F89241E1F8F002075D9 /* DPThemeModel.m */,
 				7E339F8E241E1F8F002075D9 /* NSObject+Dynamic.h */,
 				7E339F85241E1F8F002075D9 /* NSObject+Dynamic.m */,
 				7E339F86241E1F8F002075D9 /* UIWindow+Dynamic.h */,
@@ -469,6 +467,8 @@
 		7E339F72241E19E4002075D9 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7E00115A24290A70006B2CE9 /* TestConfig.h */,
+				7E00115924290A70006B2CE9 /* TestConfig.m */,
 				7E339F73241E1A23002075D9 /* DPOneVc.h */,
 				7E339F74241E1A23002075D9 /* DPOneVc.m */,
 				7E339F76241E1A34002075D9 /* DPTwoVc.h */,
@@ -755,8 +755,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E0011582429094B006B2CE9 /* theme.plist in Resources */,
 				7E339F11241E1186002075D9 /* LaunchScreen.storyboard in Resources */,
-				7E339F38241E189F002075D9 /* theme.plist in Resources */,
 				7E339F0E241E1186002075D9 /* Assets.xcassets in Resources */,
 				7E339F83241E1D67002075D9 /* Main.storyboard in Resources */,
 			);
@@ -806,7 +806,6 @@
 				7E33A10F241E399C002075D9 /* SDImageCodersManager.m in Sources */,
 				7E33A12B241E399D002075D9 /* SDImageCacheConfig.m in Sources */,
 				7E33A111241E399C002075D9 /* SDMemoryCache.m in Sources */,
-				7E339F92241E1F8F002075D9 /* DPThemeModel.m in Sources */,
 				7E33A0FD241E399C002075D9 /* NSImage+Compatibility.m in Sources */,
 				7E33A13E241E399D002075D9 /* UIColor+HexString.m in Sources */,
 				7E33A102241E399C002075D9 /* SDImageIOAnimatedCoder.m in Sources */,
@@ -833,6 +832,7 @@
 				7E33A127241E399D002075D9 /* UIImageView+WebCache.m in Sources */,
 				7E33A13D241E399D002075D9 /* NSBezierPath+RoundedCorners.m in Sources */,
 				7E33A122241E399C002075D9 /* SDImageLoadersManager.m in Sources */,
+				7E00115B24290A70006B2CE9 /* TestConfig.m in Sources */,
 				7E33A131241E399D002075D9 /* UIImage+Metadata.m in Sources */,
 				7E33A130241E399D002075D9 /* UIView+WebCache.m in Sources */,
 				7E339F75241E1A23002075D9 /* DPOneVc.m in Sources */,

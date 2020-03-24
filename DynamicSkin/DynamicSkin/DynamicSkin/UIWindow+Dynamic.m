@@ -34,7 +34,7 @@ static const char TZCurrentUserStyleKey = '\0';
         }else{
             self.currentStyle =self.TZ_traitCollection.userInterfaceStyle;
             //用户切换了模式
-            [[DPThemeManager manager]pushCurrentThemme];
+            [[DPThemeManager manager]updateTheme];
         }
     }else{
         return [self TZ_traitCollection];

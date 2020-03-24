@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "DPThemeConfig.h"
 #import "DPThemeConst.h"
-#import "DPThemeModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DPThemeManager : NSObject
@@ -25,15 +24,22 @@ NS_ASSUME_NONNULL_BEGIN
  @return DPThemeConfig
  */
 -(DPThemeConfig*)currentThemeConfig:(DynamicThemeUpdate)block WithIdentifier:(NSString*)identifer;
+
 /**
- @brief 用于系统暗夜模式切换
+ @brief 设置暗夜模式主题皮肤（程序启动时可以设置，暗夜模式下自动切换）
  */
--(void)pushCurrentThemme;
+-(void)pushDarkModeTheme:(DPThemeConfig*)darkConfig;
 /**
  @brief 切换自定义主题
- @param theme  新的主题
+ @param currentConfig  新的主题
  */
--(void)pushCurrentThemme:(DPThemeModel*)theme;
+-(void)pushCurrentThemme:(DPThemeConfig*)currentConfig;
+
+/**
+ @brief 模式改变了触发自动更新皮肤
+ */
+-(void)updateTheme;
+
 /**
  @brief 视图销毁,移除更新回调（注意：动态绑定了视图更新的界面，需要在对象销毁时调用该方法）
  @param identifer 唯一标识

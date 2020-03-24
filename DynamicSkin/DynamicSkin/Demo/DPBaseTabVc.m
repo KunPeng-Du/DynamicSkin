@@ -11,6 +11,7 @@
 #import "DPTwoVc.h"
 #import "DPThreeVc.h"
 #import "DPDynamicTheme.h"
+#import "TestConfig.h"
 @interface DPBaseTabVc ()<UITabBarDelegate>
 
 @end
@@ -34,18 +35,18 @@
 -(void)addTabVc:(UIViewController*)vc withTittle:(NSString*)title{
     UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:vc];
     vc.title =title ;
-    [self tz_dynamicTheme:^(DPThemeConfig * _Nullable config) {
+    [self tz_dynamicTheme:^(TestConfig * _Nullable config) {
         if ([title isEqualToString:@"one"]) {
-//            nv.tabBarItem.image = [UIImage imageNamed:config.tabOne];
-           // nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
+            nv.tabBarItem.image = [UIImage imageNamed:config.tabOne];
+//            nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
         }else if ([title isEqualToString:@"two"]){
-//            nv.tabBarItem.image = [UIImage imageNamed:config.tabTwo];
-           // nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
+            nv.tabBarItem.image = [UIImage imageNamed:config.tabTwo];
+//            nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
         }else if ([title isEqualToString:@"three"]){
-//            nv.tabBarItem.image = [UIImage imageNamed:config.tabTwo];
-            //nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
+            nv.tabBarItem.image = [UIImage imageNamed:config.tabTwo];
+//            nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
         }
-//        self.tabBar.tintColor = [UIColor dp_colorWithHexString:config.tabTextColorNormal];
+        self.tabBar.tintColor = [UIColor dp_colorWithHexString:config.tabTextColorNormal];
     
     } WithIdentifier:NSStringFromClass([self class])];
     

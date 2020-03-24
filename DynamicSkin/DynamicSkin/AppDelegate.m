@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DPDynamicTheme.h"
 #import "MJExtension.h"
+#import "TestConfig.h"
 @interface AppDelegate ()
 
 @end
@@ -18,8 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
       NSDictionary *dataSource = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"theme" ofType:@"plist"]];
-      DPThemeModel *model = [DPThemeModel mj_objectWithKeyValues: [dataSource objectForKey:@"one"]];
-   [[DPThemeManager manager]pushCurrentThemme:model];
+      TestConfig *one = [TestConfig mj_objectWithKeyValues: [dataSource objectForKey:@"one"]];
+        [[DPThemeManager manager]pushCurrentThemme:one];
+    
+        TestConfig *dark = [TestConfig mj_objectWithKeyValues: [dataSource objectForKey:@"dark"]];
+        [[DPThemeManager manager]pushDarkModeTheme:dark];
     return YES;
 }
 
