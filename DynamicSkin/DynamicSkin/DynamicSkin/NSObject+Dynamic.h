@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (Dynamic)
 /**
- @brief 视图销毁,不需更新回调
+ @brief 数据绑定主方法
  @param identifer 唯一标识
  */
--(void)tz_dynamicTheme:(DynamicThemeUpdate)update WithIdentifier:(NSString*)identifer;
+-(void)dp_dynamicTheme:(DynamicThemeUpdate)update WithIdentifier:(NSString*)identifer;
 @end
 
 NS_ASSUME_NONNULL_END

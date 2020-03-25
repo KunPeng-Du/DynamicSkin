@@ -10,7 +10,7 @@
 #import "DPThemeManager.h"
 
 @implementation NSObject (Dynamic)
--(void)tz_dynamicTheme:(DynamicThemeUpdate)update WithIdentifier:(NSString*)identifer{
+-(void)dp_dynamicTheme:(DynamicThemeUpdate)update WithIdentifier:(NSString*)identifer{
      update([[DPThemeManager manager] currentThemeConfig:(DynamicThemeUpdate)update WithIdentifier:(NSString*)identifer]);
 }
 @end

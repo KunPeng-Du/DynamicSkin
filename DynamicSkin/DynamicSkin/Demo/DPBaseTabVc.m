@@ -35,7 +35,7 @@
 -(void)addTabVc:(UIViewController*)vc withTittle:(NSString*)title{
     UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:vc];
     vc.title =title ;
-    [self tz_dynamicTheme:^(TestConfig * _Nullable config) {
+    [self dp_dynamicTheme:^(TestConfig * _Nullable config) {
         if ([title isEqualToString:@"one"]) {
             nv.tabBarItem.image = [UIImage imageNamed:config.tabOne];
 //            nv.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];

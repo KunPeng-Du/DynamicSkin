@@ -28,7 +28,7 @@
     [self.view addSubview:self.image];
     [self.view addSubview:self.statelabel];
     __weak typeof (self)weakSelf = self;
-    [self tz_dynamicTheme:^(TestConfig * _Nullable config) {
+    [self dp_dynamicTheme:^(TestConfig * _Nullable config) {
         [weakSelf.image sd_setImageWithURL:[NSURL URLWithString:config.img1]];
         weakSelf.statelabel.text = config.state;
     } WithIdentifier:NSStringFromClass([self class])];
